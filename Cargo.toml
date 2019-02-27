@@ -1,0 +1,14 @@
+[package]
+name = "lis3mdl"
+version = "0.1.0"
+authors = ["Ryan Rightmer <rrightmer@gmail.com>"]
+edition = "2018"
+description = "A platform agnostic driver to interface with the LIS3MDL (3-axis magnetic sensor)"
+keywords = ["embedded-hal-driver", "magnetometer", "MEMS"]
+categories = ["embedded", "hardware-support", "no-std"]
+repository = "https://github.com/ryanrightmer/lis3mdl"
+license = "MIT"
+
+[dependencies]
+embedded-hal = "0.2.2"
+bitflags = "1.0.4"

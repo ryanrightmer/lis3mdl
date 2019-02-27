@@ -1,0 +1,20 @@
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+matrix:
+  allow_failures:
+    - rust: nightly
+
+install: rustup target add thumbv7em-none-eabihf
+
+script:
+  - cargo build --verbose --all --target=thumbv7em-none-eabihf
+  - cargo test --verbose --all
+
+cache: cargo
+
+before_cache:
+  # Travis can't cache files that are not readable by "others"
+  - chmod -R a+r $HOME/.cargo
