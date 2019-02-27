@@ -7,7 +7,7 @@ description = "A platform agnostic driver to interface with the LIS3MDL (3-axis 
 keywords = ["embedded-hal-driver", "magnetometer", "MEMS"]
 categories = ["embedded", "hardware-support", "no-std"]
 repository = "https://github.com/ryanrightmer/lis3mdl"
-license = "MIT"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 embedded-hal = "0.2.2"
