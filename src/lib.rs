@@ -109,10 +109,10 @@ impl<I2C, E> Lis3mdl<I2C> where I2C: WriteRead<Error=E> + Write<Error=E>,
     /// These defaults may be changed after initialization with `set_full_scale`,
     /// `set_measurement_mode`, `set_operating_mode` `set_temperature_sensor`,
     /// `set_data_rate`, and `set_block_data_update`, respectively.
-    pub fn new (i2c: I2C) -> Result<Self,Error> {
+    pub fn new (i2c: I2C, address: u8) -> Result<Self,Error> {
         let mut lis3mdl = Lis3mdl {
             i2c,
-            address: ADDRESS
+            address
         };
 
         if lis3mdl.who_am_i()? != LIS3MDL_DEVICE_ID {
@@ -400,7 +400,7 @@ impl<I2C, E> Lis3mdl<I2C> where I2C: WriteRead<Error=E> + Write<Error=E>,
     }
 }
 
-const ADDRESS: u8 = 0b0011_1100;
+pub const ADDRESS: u8 = 0b0011_1100;
 const LIS3MDL_DEVICE_ID: u8 = 0x3D;
 
 #[allow(non_camel_case_types, dead_code)]
