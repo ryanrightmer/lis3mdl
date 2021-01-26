@@ -169,6 +169,7 @@ impl<I2C, E> Lis3mdl<I2C> where I2C: WriteRead<Error=E> + Write<Error=E>,
 
     /// Provide the magnetic field strength in each axis in milliGauss. Uses `get_raw_mag_axes` to
     /// obtain the value.
+    /// Note that this function uses f64 math.
     pub fn get_mag_axes_mgauss(&mut self) -> Result<I32xyz, Error> {
         let mag_data = self.get_raw_mag_axes()?;
 
